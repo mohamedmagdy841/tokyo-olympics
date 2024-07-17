@@ -1,0 +1,22 @@
+-- Number of athletes from each country
+SELECT TOP 10 Country, COUNT(*) AS Total_Athletes
+FROM athletes
+GROUP BY Country
+ORDER BY Total_Athletes DESC;
+
+-- Total medals won by each country
+SELECT TOP 10 TeamCountry,
+SUM(Gold) AS Total_Gold,
+SUM(Silver) AS Total_Silver,
+SUM(Bronze) AS Total_Bronze
+FROM medals
+GROUP BY TeamCountry
+ORDER BY Total_Gold DESC;
+
+-- Average number of entries by gender for each discipline
+SELECT TOP 5 Discipline,
+AVG(Female) AS AVG_Female,
+AVG(Male) AS AVG_Male
+FROM entriesgender
+GROUP BY Discipline
+ORDER BY Discipline DESC;
