@@ -12,11 +12,3 @@ SUM(Bronze) AS Total_Bronze
 FROM medals
 GROUP BY TeamCountry
 ORDER BY Total_Gold DESC;
-
--- Average number of entries by gender for each discipline
-SELECT TOP 5 Discipline,
-AVG(Female) AS AVG_Female,
-AVG(Male) AS AVG_Male
-FROM entriesgender
-GROUP BY Discipline
-ORDER BY Discipline DESC;
